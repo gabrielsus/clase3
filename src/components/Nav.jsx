@@ -1,10 +1,13 @@
 import "./Nav.css";
+import {useState, useEffect} from "react";
+import imagenFallback from "../assets/notimage.jpg";
 const Item = ({description, price, image}) => {
+    const [imgSrc, setImgSrc] = useState(image);
     return(
         <div className="item">
-            <img src={image} alt={description} width={150} height={70}/>
+            <img src={imgSrc} alt={description} width={150} height={70} onError={() => setImgSrc(imagenFallback)}/>
             <h3>{description}</h3>
-            <p>${price.toFixed(2)}</p>
+            <p>${price ? Number(price).toFixed(2) : '0.00'}</p>
         </div>
     );
 };
