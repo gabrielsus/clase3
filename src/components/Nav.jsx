@@ -1,4 +1,5 @@
-import "./Nav.css";
+//import "./Nav.css";
+import "./ListaProductos.css";
 import {useState, useEffect} from "react";
 import imagenFallback from "../assets/notimage.jpg";
 const Item = ({description, price, image}) => {
@@ -14,7 +15,7 @@ const Item = ({description, price, image}) => {
 
 const ListaProductos = ({productos}) => {
     return (
-        <div className="contenedor-lista  ">
+        <div className="contenedor-lista">
             {productos.map((producto, index) => (
                 <Item
                     key={index}
